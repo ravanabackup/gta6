@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GTA VI — Purchase & Download Simulator (India)</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@600;800&display=swap');
+  body{font-family:'Inter',sans-serif;background:#06060c;color:#fff;overflow-x:hidden}
+  .display{font-family:'Bebas Neue',sans-serif;letter-spacing:.02em}
+  .mono{font-family:'Orbitron',sans-serif}
+  .vi-logo{
+    font-family:'Bebas Neue',sans-serif;
+    background:linear-gradient(180deg,#ff5fc8 0%,#ff2e93 35%,#ff7a3d 75%,#ffd24d 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 0 40px rgba(255,46,147,.35);
+  }
+  .neon-pink{color:#ff2e93}
+  .glow{box-shadow:0 0 30px rgba(255,46,147,.25)}
+  .hero-bg{
+    background:
+      radial-gradient(circle at 20% 20%,rgba(255,46,147,.30),transparent 45%),
+      radial-gradient(circle at 80% 30%,rgba(123,63,255,.30),transparent 45%),
+      radial-gradient(circle at 50% 90%,rgba(255,122,61,.25),transparent 50%),
+      linear-gradient(180deg,#0a0414,#06060c);
+  }
+  .palm{position:absolute;bottom:0;font-size:140px;opacity:.18;filter:blur(.5px)}
+  .card-glass{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(12px)}
+  .btn-pink{background:linear-gradient(90deg,#ff2e93,#ff7a3d);transition:.2s}
+  .btn-pink:hover{filter:brightness(1.12);transform:translateY(-2px)}
+  .scanline{background:repeating-linear-gradient(90deg,#ff2e93,#ff2e93 10px,#ff7a3d 10px,#ff7a3d 20px)}
+  .pulse-dot{animation:pulse 1.4s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+  .progress-stripe{background-image:linear-gradient(45deg,rgba(255,255,255,.18) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.18) 50%,rgba(255,255,255,.18) 75%,transparent 75%,transparent);background-size:28px 28px;animation:move 1s linear infinite}
+  @keyframes move{0%{background-position:0 0}100%{background-position:28px 0}}
+  .tab-active{border-color:#ff2e93;color:#ff2e93}
+  ::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:#0a0414}::-webkit-scrollbar-thumb{background:#ff2e93;border-radius:6px}
+  .ai-badge{background:linear-gradient(90deg,#7b3fff,#ff2e93)}
+</style>
+</head>
+<body>
+
+<!-- AI COMPETITION BANNER -->
+<div class="w-full ai-badge text-center text-xs sm:text-sm font-semibold py-2 px-3">
+  🤖 AI BUILD CHALLENGE — GTA VI Purchase &amp; Download Simulator · Data sourced from Rockstar's June 25, 2026 pre-order reveal
+</div>
+
+<!-- NAV -->
+<nav class="sticky top-0 z-40 backdrop-blur-xl bg-[#06060c]/80 border-b border-white/10">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <div class="flex items-center gap-2">
+      <span class="vi-logo text-4xl leading-none">VI</span>
+      <span class="display text-xl tracking-wider hidden sm:block">GRAND THEFT AUTO</span>
+    </div>
+    <div class="flex items-center gap-3 text-sm">
+      <span class="hidden md:flex items-center gap-1 text-gray-300"><span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span> Store Online</span>
+      <button onclick="document.getElementById('editions').scrollIntoView({behavior:'smooth'})" class="btn-pink px-4 py-2 rounded-lg font-semibold text-sm">Buy Now</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero-bg relative overflow-hidden">
+  <span class="palm left-4">🌴</span><span class="palm right-6">🌴</span>
+  <div class="max-w-6xl mx-auto px-4 py-16 sm:py-24 relative z-10 text-center">
+    <p class="neon-pink display text-2xl tracking-[.3em] mb-2">WELCOME TO LEONIDA</p>
+    <h1 class="vi-logo text-7xl sm:text-9xl leading-none mb-4">GTA VI</h1>
+    <p class="text-gray-300 max-w-2xl mx-auto text-lg mb-2">
+      Return to <strong class="text-white">Vice City</strong>. The story of <strong class="text-white">Jason Duval</strong> &amp; <strong class="text-white">Lucia Caminos</strong> — a criminal couple caught in the neon-soaked sprawl of the state of Leonida.
+    </p>
+    <div class="flex flex-wrap justify-center gap-3 mt-6 text-sm">
+      <span class="card-glass px-4 py-2 rounded-full">📅 Releases <b>Nov 19, 2026</b></span>
+      <span class="card-glass px-4 py-2 rounded-full">🎮 PS5 / PS5 Pro · Xbox Series X|S</span>
+      <span class="card-glass px-4 py-2 rounded-full">⬇️ Preload from <b>Nov 12, 2026</b></span>
+      <span class="card-glass px-4 py-2 rounded-full">💾 ~150 GB install</span>
+    </div>
+    <div class="mt-8 flex flex-col sm:flex-row justify-center gap-3">
+      <button onclick="document.getElementById('editions').scrollIntoView({behavior:'smooth'})" class="btn-pink px-8 py-4 rounded-xl font-bold text-lg glow">Pre-Order Now →</button>
+      <a href="#countdown" class="card-glass px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/10 transition">View Countdown</a>
+    </div>
+    <p class="text-xs text-gray-500 mt-4">⚠️ Fan-made simulation for an AI coding competition. Not affiliated with or endorsed by Rockstar Games / Take-Two.</p>
+  </div>
+</header>
+
+<!-- COUNTDOWN -->
+<section id="countdown" class="max-w-6xl mx-auto px-4 py-12">
+  <h2 class="display text-3xl text-center mb-6 tracking-wider">⏳ COUNTDOWN TO LAUNCH</h2>
+  <div id="clock" class="grid grid-cols-4 gap-3 max-w-2xl mx-auto text-center"></div>
+</section>
+
+<!-- EDITIONS -->
+<section id="editions" class="max-w-6xl mx-auto px-4 py-12">
+  <h2 class="display text-4xl text-center mb-2 tracking-wider">CHOOSE YOUR EDITION</h2>
+  <p class="text-center text-gray-400 mb-10">Indian pricing as confirmed on the PlayStation &amp; Xbox storefronts.</p>
+  <div class="grid md:grid-cols-2 gap-6">
+
+    <!-- STANDARD -->
+    <div class="card-glass rounded-2xl p-7 flex flex-col">
+      <div class="flex justify-between items-start mb-1">
+        <h3 class="display text-3xl tracking-wide">STANDARD EDITION</h3>
+        <span class="scanline w-12 h-12 rounded-lg"></span>
+      </div>
+      <p class="text-gray-400 text-sm mb-4">The complete single-player experience.</p>
+      <div class="mb-5"><span class="text-4xl font-extrabold">₹5,999</span><span class="text-gray-500 text-sm"> (~$79.99)</span></div>
+      <ul class="space-y-2 text-sm text-gray-300 flex-1 mb-6">
+        <li>✅ Full GTA VI campaign — Jason &amp; Lucia</li>
+        <li>✅ Explore Vice City &amp; the state of Leonida</li>
+        <li>🎁 <b>Vintage Vice City Pack</b> (pre-order bonus)</li>
+        <li class="pl-5 text-gray-400">• Classic Vapid Stanier + personal garage</li>
+        <li class="pl-5 text-gray-400">• Exclusive outfits &amp; hairstyles</li>
+        <li class="pl-5 text-gray-400">• Tommy Vercetti-inspired weapon skin</li>
+        <li>📅 Free month of GTA+ (digital)</li>
+      </ul>
+      <button onclick="openCheckout('Standard',5999)" class="btn-pink py-3 rounded-xl font-bold">Pre-Order Standard</button>
+    </div>
+
+    <!-- ULTIMATE -->
+    <div class="card-glass rounded-2xl p-7 flex flex-col border-2 border-pink-500/60 relative">
+      <span class="absolute -top-3 left-1/2 -translate-x-1/2 btn-pink text-xs font-bold px-4 py-1 rounded-full">MOST POPULAR</span>
+      <div class="flex justify-between items-start mb-1">
+        <h3 class="display text-3xl tracking-wide neon-pink">ULTIMATE EDITION</h3>
+        <span class="scanline w-12 h-12 rounded-lg"></span>
+      </div>
+      <p class="text-gray-400 text-sm mb-4">Base game + premium content across the whole story.</p>
+      <div class="mb-5"><span class="text-4xl font-extrabold">₹7,499</span><span class="text-gray-500 text-sm"> (~$99.99)</span></div>
+      <ul class="space-y-2 text-sm text-gray-300 flex-1 mb-6">
+        <li>✅ Everything in Standard + Vintage Vice City Pack</li>
+        <li>🚗 <b>'95 Grotti Cheetah</b> supercar</li>
+        <li>🏍️ <b>Dinka Enduro</b> motorcycle &amp; Crest Kayak</li>
+        <li>🚙 <b>'67 Vapid Dominator Buggy</b> &amp; Shitzu Squalo boat</li>
+        <li>🔫 Exclusive weapons, tattoos &amp; apparel</li>
+        <li>🏢 Extra missions, businesses &amp; side activities</li>
+        <li>🔧 Exclusive vehicle modification shops</li>
+      </ul>
+      <button onclick="openCheckout('Ultimate',7499)" class="btn-pink py-3 rounded-xl font-bold glow">Pre-Order Ultimate</button>
+    </div>
+  </div>
+  <p class="text-center text-xs text-gray-500 mt-5">All pre-orders before Nov 20, 2026 include the Vintage Vice City Pack. Physical box contains a download code only.</p>
+</section>
+
+<!-- WORLD / CHARACTERS -->
+<section class="max-w-6xl mx-auto px-4 py-12">
+  <h2 class="display text-3xl text-center mb-8 tracking-wider">🌴 THE WORLD OF LEONIDA</h2>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="card-glass rounded-xl p-5"><div class="text-3xl mb-2">🕶️</div><h4 class="font-bold mb-1">Jason Duval</h4><p class="text-sm text-gray-400">Ex-army drifter chasing an easy life — until a job goes wrong.</p></div>
+    <div class="card-glass rounded-xl p-5"><div class="text-3xl mb-2">💋</div><h4 class="font-bold mb-1">Lucia Caminos</h4><p class="text-sm text-gray-400">Series' first non-optional female lead. Fresh out of prison, all in.</p></div>
+    <div class="card-glass rounded-xl p-5"><div class="text-3xl mb-2">🌆</div><h4 class="font-bold mb-1">Vice City</h4><p class="text-sm text-gray-400">Rockstar's neon-soaked take on Miami, bigger than ever before.</p></div>
+    <div class="card-glass rounded-xl p-5"><div class="text-3xl mb-2">🗺️</div><h4 class="font-bold mb-1">State of Leonida</h4><p class="text-sm text-gray-400">A whole fictional state inspired by Florida — the biggest GTA map yet.</p></div>
+  </div>
+</section>
+
+<!-- ============ CHECKOUT MODAL ============ -->
+<div id="checkoutModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-sm p-4 overflow-y-auto">
+  <div class="card-glass rounded-2xl max-w-md w-full p-6 my-8 relative">
+    <button onclick="closeCheckout()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">×</button>
+    <h3 class="display text-2xl tracking-wide mb-1">CHECKOUT</h3>
+    <div class="flex justify-between items-center bg-white/5 rounded-lg px-4 py-3 my-4">
+      <div><p class="text-sm text-gray-400">GTA VI — <span id="ckEdition">Standard</span></p><p class="text-xs text-gray-500">PS5 / Xbox Series X|S · Digital</p></div>
+      <p class="text-2xl font-extrabold" id="ckBase">₹5,999</p>
+    </div>
+
+    <!-- bill breakdown -->
+    <div class="text-sm space-y-1 mb-4 border-t border-b border-white/10 py-3">
+      <div class="flex justify-between text-gray-300"><span>Subtotal</span><span id="ckSub">₹5,999.00</span></div>
+      <div class="flex justify-between text-gray-300"><span>GST (18%)</span><span id="ckGst">₹0.00</span></div>
+      <div class="flex justify-between text-gray-400 text-xs"><span>MRP is inclusive of taxes in India</span><span></span></div>
+      <div class="flex justify-between font-bold text-lg pt-1"><span>Total Payable</span><span id="ckTotal" class="neon-pink">₹5,999.00</span></div>
+    </div>
+
+    <label class="text-xs text-gray-400">Email for receipt &amp; download code</label>
+    <input id="ckEmail" type="email" placeholder="you@email.com" value="player@leonida.in" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 mb-4 text-sm outline-none focus:border-pink-500">
+
+    <p class="text-sm text-gray-400 mb-2">Payment Method</p>
+    <div class="grid grid-cols-3 gap-2 mb-4" id="payMethods">
+      <button data-m="UPI" class="paybtn card-glass rounded-lg py-3 text-sm font-semibold tab-active border">UPI</button>
+      <button data-m="Card" class="paybtn card-glass rounded-lg py-3 text-sm font-semibold border border-white/10">Card</button>
+      <button data-m="NetBanking" class="paybtn card-glass rounded-lg py-3 text-sm font-semibold border border-white/10">NetBanking</button>
+    </div>
+
+    <div id="upiBox" class="mb-4">
+      <input placeholder="yourname@upi" value="player@okhdfcbank" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm outline-none focus:border-pink-500">
+      <p class="text-xs text-gray-500 mt-1">Google Pay · PhonePe · Paytm · BHIM supported</p>
+    </div>
+    <div id="cardBox" class="mb-4 hidden space-y-2">
+      <input placeholder="Card number" value="4111 1111 1111 1111" class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm outline-none focus:border-pink-500">
+      <div class="flex gap-2"><input placeholder="MM/YY" value="11/29" class="w-1/2 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm outline-none focus:border-pink-500"><input placeholder="CVV" value="123" class="w-1/2 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm outline-none focus:border-pink-500"></div>
+    </div>
+    <div id="nbBox" class="mb-4 hidden">
+      <select class="w-full bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm outline-none focus:border-pink-500 text-white">
+        <option class="bg-[#0a0414]">HDFC Bank</option><option class="bg-[#0a0414]">State Bank of India</option><option class="bg-[#0a0414]">ICICI Bank</option><option class="bg-[#0a0414]">Axis Bank</option><option class="bg-[#0a0414]">Kotak Mahindra</option>
+      </select>
+    </div>
+
+    <button id="payBtn" onclick="payNow()" class="btn-pink w-full py-3.5 rounded-xl font-bold text-lg">Pay <span id="payAmt">₹5,999.00</span></button>
+    <p class="text-xs text-gray-500 text-center mt-3">🔒 Simulated 256-bit secure checkout · No real payment is processed.</p>
+  </div>
+</div>
+
+<!-- ============ PROCESSING / SUCCESS / DOWNLOAD MODAL ============ -->
+<div id="downloadModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 backdrop-blur-sm p-4 overflow-y-auto">
+  <div class="card-glass rounded-2xl max-w-lg w-full p-6 my-8 relative">
+
+    <!-- processing -->
+    <div id="processView" class="text-center py-10">
+      <div class="w-16 h-16 border-4 border-pink-500/30 border-t-pink-500 rounded-full animate-spin mx-auto mb-5"></div>
+      <p class="display text-2xl tracking-wide" id="procText">Processing payment…</p>
+      <p class="text-gray-400 text-sm mt-2" id="procSub">Contacting bank securely</p>
+    </div>
+
+    <!-- success + download -->
+    <div id="successView" class="hidden">
+      <div class="text-center mb-5">
+        <div class="text-5xl mb-2">✅</div>
+        <h3 class="display text-3xl tracking-wide neon-pink">PURCHASE COMPLETE</h3>
+        <p class="text-gray-400 text-sm mt-1">Order <span id="orderId" class="text-white mono"></span></p>
+      </div>
+
+      <div class="bg-white/5 rounded-lg p-4 text-sm mb-5">
+        <div class="flex justify-between mb-1"><span class="text-gray-400">Edition</span><span id="rcEdition" class="font-semibold"></span></div>
+        <div class="flex justify-between mb-1"><span class="text-gray-400">Amount paid</span><span id="rcAmt" class="font-semibold"></span></div>
+        <div class="flex justify-between mb-1"><span class="text-gray-400">Receipt sent to</span><span id="rcEmail" class="font-semibold"></span></div>
+        <div class="flex justify-between"><span class="text-gray-400">Download code</span><span id="rcCode" class="font-semibold mono neon-pink"></span></div>
+      </div>
+
+      <!-- download elements -->
+      <div class="border border-white/10 rounded-xl p-4">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="vi-logo text-4xl leading-none">VI</span>
+          <div class="flex-1">
+            <p class="font-bold leading-tight">Grand Theft Auto VI</p>
+            <p class="text-xs text-gray-400" id="dlFileName">GTA6_Setup_Leonida.pkg</p>
+          </div>
+          <span id="dlStateBadge" class="text-xs px-2 py-1 rounded bg-yellow-500/20 text-yellow-300">Ready</span>
+        </div>
+
+        <div class="flex justify-between text-xs text-gray-400 mb-1">
+          <span id="dlPct">0%</span>
+          <span id="dlSize">0 GB / 150 GB</span>
+        </div>
+        <div class="w-full bg-white/10 rounded-full h-3 overflow-hidden mb-2">
+          <div id="dlBar" class="progress-stripe btn-pink h-full rounded-full" style="width:0%"></div>
+        </div>
+        <div class="flex justify-between text-xs text-gray-400 mb-4">
+          <span id="dlSpeed">—</span>
+          <span id="dlEta">ETA: —</span>
+        </div>
+
+        <div class="flex gap-2">
+          <button id="dlStart" onclick="startDownload()" class="btn-pink flex-1 py-2.5 rounded-lg font-bold text-sm">⬇️ Download Game</button>
+          <button id="dlPause" onclick="togglePause()" class="card-glass border border-white/10 px-4 py-2.5 rounded-lg font-bold text-sm hidden">⏸ Pause</button>
+        </div>
+
+        <div id="dlLog" class="mt-3 mt-3 bg-black/40 rounded-lg p-2 h-24 overflow-y-auto text-xs text-green-400 mono leading-relaxed hidden"></div>
+      </div>
+
+      <!-- preload note -->
+      <p class="text-xs text-gray-500 text-center mt-4">📅 Real preload unlocks <b>Nov 12, 2026</b>. Playable worldwide <b>Nov 19, 2026</b>.</p>
+      <button onclick="closeDownload()" class="w-full text-gray-400 hover:text-white text-sm mt-3">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- INSTALLED / PLAY -->
+<div id="doneModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/90 backdrop-blur-sm p-4">
+  <div class="text-center hero-bg card-glass rounded-2xl max-w-md w-full p-10 relative overflow-hidden">
+    <span class="palm left-2 text-7xl">🌴</span><span class="palm right-2 text-7xl">🌴</span>
+    <div class="relative z-10">
+      <div class="text-5xl mb-3">🎉</div>
+      <h3 class="vi-logo text-5xl mb-2">INSTALLED</h3>
+      <p class="text-gray-300 mb-1">Grand Theft Auto VI is ready.</p>
+      <p class="text-xs text-gray-500 mb-6">Welcome to Leonida, <span id="playerName">player</span>.</p>
+      <button onclick="launchGame()" class="btn-pink w-full py-3.5 rounded-xl font-bold text-lg glow mb-2">▶ PLAY NOW</button>
+      <button onclick="location.reload()" class="text-gray-400 hover:text-white text-sm">Run simulation again</button>
+    </div>
+  </div>
+</div>
+
+<footer class="border-t border-white/10 mt-12 py-8 text-center text-xs text-gray-500 px-4">
+  <p>🤖 Built by an AI for a coding competition · GTA VI purchase &amp; download <b>simulation</b> in INR.</p>
+  <p class="mt-1">Grand Theft Auto, GTA, Vice City &amp; Leonida are trademarks of Rockstar Games / Take-Two Interactive. This is an unofficial fan demo — no real transactions occur.</p>
+</footer>
+
+<script>
+// ---------- Countdown ----------
+const launch = new Date('2026-11-19T00:00:00');
+function tick(){
+  const now=new Date(), d=launch-now;
+  const u=[['DAYS',Math.floor(d/864e5)],['HOURS',Math.floor(d%864e5/36e5)],['MIN',Math.floor(d%36e5/6e4)],['SEC',Math.floor(d%6e4/1e3)]];
+  document.getElementById('clock').innerHTML=u.map(([l,v])=>
+    `<div class="card-glass rounded-xl py-4"><div class="mono text-3xl sm:text-5xl font-extrabold neon-pink">${d<0?'00':String(v).padStart(2,'0')}</div><div class="text-xs text-gray-400 tracking-widest mt-1">${l}</div></div>`).join('');
+}
+tick(); setInterval(tick,1000);
+
+// ---------- Checkout ----------
+let CUR={edition:'Standard',price:5999};
+const fmt=n=>'₹'+n.toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});
+
+function openCheckout(edition,price){
+  CUR={edition,price};
+  document.getElementById('ckEdition').textContent=edition;
+  document.getElementById('ckBase').textContent='₹'+price.toLocaleString('en-IN');
+  document.getElementById('ckSub').textContent=fmt(price);
+  // MRP inclusive of GST -> show the GST component within price
+  const gst=+(price-price/1.18).toFixed(2);
+  document.getElementById('ckGst').textContent=fmt(gst)+' (incl.)';
+  document.getElementById('ckTotal').textContent=fmt(price);
+  document.getElementById('payAmt').textContent=fmt(price);
+  const m=document.getElementById('checkoutModal');
+  m.classList.remove('hidden'); m.classList.add('flex');
+}
+function closeCheckout(){const m=document.getElementById('checkoutModal');m.classList.add('hidden');m.classList.remove('flex');}
+
+// payment method switch
+document.querySelectorAll('.paybtn').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.paybtn').forEach(x=>{x.classList.remove('tab-active');x.classList.add('border-white/10');});
+  b.classList.add('tab-active');b.classList.remove('border-white/10');
+  document.getElementById('upiBox').classList.toggle('hidden',b.dataset.m!=='UPI');
+  document.getElementById('cardBox').classList.toggle('hidden',b.dataset.m!=='Card');
+  document.getElementById('nbBox').classList.toggle('hidden',b.dataset.m!=='NetBanking');
+});
+
+// ---------- Pay ----------
+function payNow(){
+  const email=document.getElementById('ckEmail').value||'player@leonida.in';
+  closeCheckout();
+  const dm=document.getElementById('downloadModal');
+  dm.classList.remove('hidden');dm.classList.add('flex');
+  document.getElementById('processView').classList.remove('hidden');
+  document.getElementById('successView').classList.add('hidden');
+
+  const steps=[['Processing payment…','Contacting bank securely'],['Verifying with bank…','One-time authentication'],['Payment authorised ✓','Generating download code']];
+  let i=0;
+  const pt=document.getElementById('procText'),ps=document.getElementById('procSub');
+  const iv=setInterval(()=>{i++;if(i<steps.length){pt.textContent=steps[i][0];ps.textContent=steps[i][1];}},900);
+
+  setTimeout(()=>{
+    clearInterval(iv);
+    document.getElementById('processView').classList.add('hidden');
+    document.getElementById('successView').classList.remove('hidden');
+    const oid='LEO-'+Math.random().toString(36).slice(2,8).toUpperCase();
+    const code=Array.from({length:3},()=>Math.random().toString(36).slice(2,7).toUpperCase()).join('-');
+    document.getElementById('orderId').textContent=oid;
+    document.getElementById('rcEdition').textContent='GTA VI — '+CUR.edition;
+    document.getElementById('rcAmt').textContent=fmt(CUR.price);
+    document.getElementById('rcEmail').textContent=email;
+    document.getElementById('rcCode').textContent=code;
+    document.getElementById('playerName').textContent=email.split('@')[0];
+  },2800);
+}
+
+// ---------- Download simulation ----------
+const TOTAL=150; // GB
+let dlVal=0,dlTimer=null,paused=false;
+function log(t){const l=document.getElementById('dlLog');l.classList.remove('hidden');l.innerHTML+=`> ${t}<br>`;l.scrollTop=l.scrollHeight;}
+
+function startDownload(){
+  document.getElementById('dlStart').classList.add('hidden');
+  document.getElementById('dlPause').classList.remove('hidden');
+  document.getElementById('dlStateBadge').textContent='Downloading';
+  document.getElementById('dlStateBadge').className='text-xs px-2 py-1 rounded bg-pink-500/20 text-pink-300';
+  log('Connecting to Rockstar CDN (Mumbai edge)…');
+  log('Allocating 150 GB on local disk…');
+  run();
+}
+function run(){
+  dlTimer=setInterval(()=>{
+    if(paused)return;
+    dlVal+=Math.random()*1.8+0.4;
+    if(dlVal>=100){dlVal=100;render();finishDownload();return;}
+    render();
+    if(Math.random()<0.08)log(['Downloading assets/leonida_map.rpf','Verifying vicecity_textures.rpf','Streaming audio/radio_stations.dat','Unpacking jason_lucia_models.rpf','Installing vehicles_pack.rpf'][Math.floor(Math.random()*5)]);
+  },180);
+}
+function render(){
+  const pct=Math.floor(dlVal);
+  document.getElementById('dlBar').style.width=pct+'%';
+  document.getElementById('dlPct').textContent=pct+'%';
+  const gb=(TOTAL*dlVal/100);
+  document.getElementById('dlSize').textContent=gb.toFixed(1)+' GB / '+TOTAL+' GB';
+  const speed=(Math.random()*22+18).toFixed(1);
+  document.getElementById('dlSpeed').textContent='↓ '+speed+' MB/s';
+  const remGB=TOTAL-gb, secs=Math.max(1,Math.round(remGB*1024/speed));
+  const mm=Math.floor(secs/60),ss=secs%60;
+  document.getElementById('dlEta').textContent='ETA: '+(paused?'Paused':mm+'m '+ss+'s');
+}
+function togglePause(){
+  paused=!paused;
+  document.getElementById('dlPause').textContent=paused?'▶ Resume':'⏸ Pause';
+  document.getElementById('dlStateBadge').textContent=paused?'Paused':'Downloading';
+  log(paused?'Download paused by user.':'Resuming download…');
+}
+function finishDownload(){
+  clearInterval(dlTimer);
+  document.getElementById('dlStateBadge').textContent='Verifying';
+  document.getElementById('dlStateBadge').className='text-xs px-2 py-1 rounded bg-blue-500/20 text-blue-300';
+  document.getElementById('dlEta').textContent='Installing…';
+  document.getElementById('dlSpeed').textContent='↓ done';
+  log('Download complete (150 GB).');
+  log('Verifying file integrity…');
+  setTimeout(()=>{log('Installing & decrypting…');},800);
+  setTimeout(()=>{
+    log('Installation finished. Ready to play!');
+    document.getElementById('dlPause').classList.add('hidden');
+    document.getElementById('dlStateBadge').textContent='Installed ✓';
+    document.getElementById('dlStateBadge').className='text-xs px-2 py-1 rounded bg-green-500/20 text-green-300';
+    setTimeout(()=>{
+      document.getElementById('downloadModal').classList.add('hidden');
+      const d=document.getElementById('doneModal');d.classList.remove('hidden');d.classList.add('flex');
+    },900);
+  },1800);
+}
+function closeDownload(){const m=document.getElementById('downloadModal');m.classList.add('hidden');m.classList.remove('flex');}
+function launchGame(){
+  const d=document.getElementById('doneModal');
+  d.innerHTML='<div class="text-center"><div class="vi-logo text-8xl mb-4 animate-pulse">GTA VI</div><p class="display text-2xl tracking-widest text-gray-300">LOADING LEONIDA…</p><p class="text-xs text-gray-500 mt-4">🌴 Welcome to Vice City 🌴</p></div>';
+}
+</script>
+</body>
+</html>
